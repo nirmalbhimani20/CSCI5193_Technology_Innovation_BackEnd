@@ -16,17 +16,21 @@ module.exports = {
         }
         else {
             var now = new Date();
+
               var query2 = "update `csci5193`.`user` set lastLogin = '"+new Date().toISOString().slice(0, 19).replace('T', ' ')+"' where email = '"+email+"' and password = '"+password+"' ";
 
             conn.query(query2 , (err, result) => {
+
                 if (err) {
                     console.log(err);
                     res.json({'status': 'False' , 'number': '104', 'Message': 'Try Again' });
                 }
                 else {
+
                     var query1 = "select * from `csci5193`.`user` where email = '"+email+"' and password = '"+password+"' ";
 
                     conn.query(query1 , (err, result1) => {
+
                         if (err) {
                             res.json({'status': 'False' , 'number': '104', 'Message': 'Try Again' });
                         }
@@ -46,11 +50,6 @@ module.exports = {
                 }
             })
             
-            
-            
         }
-
-
-    }
-    
+    }  
 }
