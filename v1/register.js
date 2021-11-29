@@ -7,6 +7,7 @@ module.exports = {
         var fullName = req.body.fullName;
         var email = req.body.email;
         var password = req.body.password;
+        var role = req.body.role;
 
         if(fullName == null || fullName == "" || fullName == undefined){
             res.json({'status': 'False' , 'number': '101', 'Message': 'Full Name null' });
@@ -17,9 +18,12 @@ module.exports = {
         else if (password == null || password == "" || password == undefined){
             res.json({'status': 'False' , 'number': '103', 'Message': 'Password null' });
         }
+        else if (role == null || role == "" || role == undefined){
+            res.json({'status': 'False' , 'number': '108', 'Message': 'roll null' });
+        }
         else {
 
-            var query1 = "select * from `sql10451610`.`user` where email = '"+email+"'  "
+            var query1 = "select * from `csci5193`.`user` where email = '"+email+"'  "
             console.log(query1);
             conn.query(query1 , (err, result) => {
                 if (err) {
@@ -29,7 +33,7 @@ module.exports = {
                     res.json({'status': 'False' , 'number': '105', 'Message': 'Email Address is already present' });
                 }
                 else {
-                    var query2 = "Insert into `sql10451610`.`user` (name , email, password,role) values ('"+fullName+"','"+email+"','"+password+"','USER')";
+                    var query2 = "Insert into `csci5193`.`user` (name , email, password,role) values ('"+fullName+"','"+email+"','"+password+"','"+role+"')";
                     console.log("query2 "+query2);
                     conn.query(query2 , (err , result2) => {
                         if (err) {
@@ -48,8 +52,5 @@ module.exports = {
 
 
     },
-    test : (req , res) => {
-        console.log("in test method");
-        res.JSON({message: "Backend running successfully"});
-    }
+
 }

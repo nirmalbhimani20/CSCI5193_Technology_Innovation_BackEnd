@@ -1,12 +1,12 @@
 const Sequelize  = require('sequelize');
 //database local credential
 const sequelize  = new Sequelize(
-    'sql10451610',
-    'sql10451610',
-    'C73UAea7wD',
+    'csci5193',
+    'csci5193',
+    'admin',
     {
         dialect : 'mysql',
-        host: 'sql10.freesqldatabase.com',
+        host: 'database-1.cynphvvikx48.us-east-1.rds.amazonaws.com',
     }
 );
 
