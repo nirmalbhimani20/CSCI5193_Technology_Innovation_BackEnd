@@ -1,14 +1,10 @@
-const Sequelize  = require('sequelize');
-//database local credential
-const sequelize  = new Sequelize(
-    'csci5193',
-    'csci5193',
-    'admin',
-    {
-        dialect : 'mysql',
-        host: 'database-1.cynphvvikx48.us-east-1.rds.amazonaws.com',
-    }
-);
+var algorithm = 'aes256'; 
+var key = 'password';
 
+var utils = {
+    algorithm : algorithm,
+    key : key
+}
 
+module.exports = utils
 module.exports = sequelize
