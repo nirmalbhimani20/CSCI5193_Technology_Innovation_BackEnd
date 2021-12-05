@@ -33,12 +33,13 @@ module.exports = {
                     res.json({'status': 'False' , 'number': '105', 'Message': 'Email Address is already present' });
                 }
                 else {
-                    var query2 = "Insert into `csci5193`.`user` (name , email, password,role) values ('"+fullName+"','"+email+"','"+password+"','"+role+"')";
-                    console.log("query2 "+query2);
-                    conn.query(query2 , (err , result2) => {
+                    var query2 = "START TRANSACTION;\n" +
+                        "Insert into `csci5193`.`user` (name , email, password,role) values (?,?,?,?);\n" +
+                        "INSERT INTO `csci5193`.`profile` (id, about) VALUES ( LAST_INSERT_ID(), NULL);\n" +
+                        "COMMIT;\n";
+                    conn.query(query2 , [fullName, email, password, role],(err , result2) => {
                         if (err) {
                             res.json({'status': 'False' , 'number': '106', 'Message': 'Try Again' });
-                
                         }else {
                             res.json({'status':'true' , 'number':'107' ,'Message':'Successfully Inserted'});
                         }

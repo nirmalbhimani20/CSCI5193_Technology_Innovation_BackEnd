@@ -16,9 +16,6 @@ con.connect(function(err){
     console.log('connected database ');
 });
 
-//const sequelize = require('../utils/utils') 
-
-//sequelize.sync();  
 
 
 

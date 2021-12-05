@@ -16,15 +16,21 @@ module.exports = {
         }
         else {
             var now = new Date();
-                var query1 = "select * from `sql10451610`.`user` where email = '"+email+"' and password = '"+password+"' ";
 
-            conn.query(query1 , (err, result) => {
+              var query2 = "update `csci5193`.`user` set lastLogin = '"+new Date().toISOString().slice(0, 19).replace('T', ' ')+"' where email = '"+email+"' and password = '"+password+"' ";
+
+            conn.query(query2 , (err, result) => {
+
                 if (err) {
+                    console.log(err);
                     res.json({'status': 'False' , 'number': '104', 'Message': 'Try Again' });
                 }
                 else {
-                    var query2 = "select * from `csci5193`.`user` where email = '"+email+"' and password = '"+password+"' ";
-                    conn.query(query2 , (err, result1) => {
+
+                    var query1 = "select * from `csci5193`.`user` where email = '"+email+"' and password = '"+password+"' ";
+
+                    conn.query(query1 , (err, result1) => {
+
                         if (err) {
                             res.json({'status': 'False' , 'number': '104', 'Message': 'Try Again' });
                         }
@@ -38,9 +44,11 @@ module.exports = {
                                 res.json({'status': 'False' , 'number': '104', 'Message': 'Try Again' });
                             }
                              }
-                    })         
+                    })
+                    
+                   
                 }
-            })   
+            })
         }
-    }  
+    }
 }

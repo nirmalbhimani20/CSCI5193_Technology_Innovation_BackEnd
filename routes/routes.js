@@ -22,6 +22,8 @@ router.post('/user/insertBlog', instructor.insertBlog);
 router.post('/user/fetchBlog', instructor.fetchBlog);
 router.post('/user/updateBlog', instructor.updateBlog);
 router.post('/user/deleteBlog', instructor.deleteBlog);
+router.get('/user/profile', profile.get);
+router.post('/user/profile', profile.update);
 
 //route to user insert update and delete 
 router.post('/instructor/insertUser', instructor.insertUser);
