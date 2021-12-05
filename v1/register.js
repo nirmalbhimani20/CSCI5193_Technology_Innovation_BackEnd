@@ -3,7 +3,6 @@ var conn = require('../utils/connection');
 
 module.exports = {
     register : (req, res) => {
-        console.log("in register method");
         var fullName = req.body.fullName;
         var email = req.body.email;
         var password = req.body.password;
@@ -24,7 +23,7 @@ module.exports = {
         else {
 
             var query1 = "select * from `csci5193`.`user` where email = '"+email+"'  "
-            console.log(query1);
+           
             conn.query(query1 , (err, result) => {
                 if (err) {
                     res.json({'status': 'False' , 'number': '104', 'Message': 'Try Again' });
