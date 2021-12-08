@@ -1,6 +1,6 @@
 # CSCI4193 & 5193 Technology Innovation Project
 ## Happify
-A Web Application where users can track and improve their mental and physical health, with help and coaching from a personal trainer![image](https://user-images.githubusercontent.com/38213036/145213833-36ca925f-9d14-4f52-abb7-4d1013a8a7d7.png)
+*A Web Application where users can track and improve their mental and physical health, with help and coaching from a personal trainer![image](https://user-images.githubusercontent.com/38213036/145213833-36ca925f-9d14-4f52-abb7-4d1013a8a7d7.png)
 
 ### Backend of project
 
