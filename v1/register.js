@@ -1,13 +1,22 @@
-const { stringify } = require('querystring');
+var utils = require('../utils/utils');
 var conn = require('../utils/connection');
+var crypto = require('crypto');
 
 module.exports = {
+
+    // register for user and instructor
     register : (req, res) => {
         console.log("in register method");
         var fullName = req.body.fullName;
         var email = req.body.email;
         var password = req.body.password;
         var role = req.body.role;
+
+
+        var cipher = crypto.createCipher(utils.algorithm,utils.key);  
+        var encryptedPassword = cipher.update(password, 'utf8', 'hex') + cipher.final('hex');
+
+
 
         if(fullName == null || fullName == "" || fullName == undefined){
             res.json({'status': 'False' , 'number': '101', 'Message': 'Full Name null' });
@@ -33,13 +42,12 @@ module.exports = {
                     res.json({'status': 'False' , 'number': '105', 'Message': 'Email Address is already present' });
                 }
                 else {
-                    var query2 = "START TRANSACTION;\n" +
-                        "Insert into `csci5193`.`user` (name , email, password,role) values (?,?,?,?);\n" +
-                        "INSERT INTO `csci5193`.`profile` (id, about) VALUES ( LAST_INSERT_ID(), NULL);\n" +
-                        "COMMIT;\n";
-                    conn.query(query2 , [fullName, email, password, role],(err , result2) => {
+                    var query2 = "Insert into `csci5193`.`user` (name , email, password,role) values ('"+fullName+"','"+email+"','"+encryptedPassword+"','"+role+"')";
+                    console.log("query2 "+query2);
+                    conn.query(query2 , (err , result2) => {
                         if (err) {
                             res.json({'status': 'False' , 'number': '106', 'Message': 'Try Again' });
+                
                         }else {
                             res.json({'status':'true' , 'number':'107' ,'Message':'Successfully Inserted'});
                         }
