@@ -1,4 +1,4 @@
-# Technology Innovation CSI4193&CSCI5193: Happify
+# Technology Innovation CSCI4193&CSCI5193: Happify
 
 This repository contains the Back-end (NodeJS) prototype of the web application for the final group project of CSCI5195 - Technology Innovation - Fall 2021. Here we have developed website for instructor and user where instructor cangive advise to subscribed user. For Front-end we have used Angular (Link for Front end: -https://github.com/Nirmal20022797/CSCI5193 )
 
