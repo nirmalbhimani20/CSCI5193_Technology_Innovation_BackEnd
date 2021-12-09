@@ -1,9 +1,8 @@
-# CSCI4193 & 5193 Technology Innovation: Happify
-A Web Application where users can track and improve their mental and physical health, with help and coaching from a personal trainer.
+# Technology Innovation CSCI5193: Happify
 
-### Backend of project
+This repository contains the front-end (Angular) prototype of the web application for the final group project of CSCI5195 - Technology Innovation - Fall 2021. Here we have developed website for instructor and user where instructor cangive advise to subscribed user. For back end we have used node js (Link for Back end: - )
 
-### Team 1
+# Group Infomration: Team 1
 
 Members:
 
