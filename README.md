@@ -35,22 +35,21 @@ Heroku backend deployment
 To have a local copy of this project up and running on your local machine, you will first need to install:
 
 * NodeJS
+* 
 ## App Set up
 
 **_git clone https://github.com/Nirmal20022797/CSCI5193Backend.git _**
 
-
-## Install Dependencies
+### Install Dependencies
 
 to install all dependencies, cd to the directory and execute:
 **_ npm intall _**
 
-## Run the Application
+### Run the Application
 
 To run the application in dev environment as a simple node app:
 
 **_ node server.js _**
-
 
 
 ## Video Presentation
