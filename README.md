@@ -14,7 +14,7 @@ Members:
 |Tejaswi Chaudhary         |Backend Developer   |
 |Thomas Rizzuto            |Full Stack Develoepr|
 
-##Technology Stack
+## Technology Stack
 
 Front end - Angularjs, Bootstrap<br />
 Back end - Nodejs<br />
@@ -31,19 +31,22 @@ Heroku front end deployment
 Heroku backend deployment
 *Live Url: https://csci5193-nodejs.herokuapp.com/
 
-# Prerequisites
+## Prerequisites
 To have a local copy of this project up and running on your local machine, you will first need to install:
 
 * NodeJS
 ## App Set up
+
 **_git clone https://github.com/Nirmal20022797/CSCI5193Backend.git _**
 
 
 ## Install Dependencies
+
 to install all dependencies, cd to the directory and execute:
 **_ npm intall _**
 
-### Run the Application
+## Run the Application
+
 To run the application in dev environment as a simple node app:
 
 **_ node server.js _**
@@ -51,6 +54,7 @@ To run the application in dev environment as a simple node app:
 
 
 ## Video Presentation
+
 https://www.youtube.com/watch?v=bwge3_BdTgI
 
 
